@@ -1,0 +1,437 @@
+/* ============================================================
+   100 Confident Devs — shared styles
+   Flat UI. Dark base #0a0d14, white text, orange #FFAA3C accents.
+   ============================================================ */
+
+:root {
+    --bg: #0a0d14;
+    --bg-raised: #11151f;
+    --bg-line: #1d2330;
+    --text: #ffffff;
+    --text-dim: #9aa3b2;
+    --accent: #ffaa3c;
+    --accent-dim: #c97f23;
+    --discord: #5865f2;
+    --max-width: 920px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Top navigation ---------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    height: 64px;
+    border-bottom: 1px solid var(--bg-line);
+    background-color: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.brand img {
+    width: 34px;
+    height: 34px;
+    display: block;
+}
+
+.brand span {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.2px;
+}
+
+.brand span b {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav a:hover {
+    color: var(--text);
+}
+
+.nav a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 28px 72px;
+}
+
+/* ---------- Home / hero ---------- */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#about {
+    margin-top: 72px;
+    scroll-margin-top: 80px;
+}
+
+.hero-logo {
+    width: 220px;
+    height: 220px;
+    max-width: 60vw;
+    display: block;
+    margin-bottom: 28px;
+}
+
+h1.title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    max-width: 560px;
+    margin-top: 14px;
+}
+
+/* ---------- Buttons (flat, square) ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 26px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-discord {
+    background-color: var(--discord);
+    color: #ffffff;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: #0a0d14;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-dim);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--bg-line);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* ---------- Discord block on home ---------- */
+
+.discord-zone {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.discord-widget {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--bg-raised);
+    border: 1px solid var(--bg-line);
+}
+
+.dw-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--bg-line);
+}
+
+.dw-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.dw-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+.dw-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #3ba55d;
+    display: inline-block;
+}
+
+.dw-stats {
+    display: flex;
+}
+
+.dw-stat {
+    flex: 1;
+    padding: 18px 20px;
+    text-align: center;
+}
+
+.dw-stat + .dw-stat {
+    border-left: 1px solid var(--bg-line);
+}
+
+.dw-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.dw-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* ---------- Section / page headings ---------- */
+
+h2.section {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 18px;
+}
+
+.page p {
+    color: var(--text);
+    margin-bottom: 16px;
+    max-width: 680px;
+}
+
+.page p.lead {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+}
+
+/* ---------- Seminars page ---------- */
+
+.banner {
+    background-color: var(--bg-raised);
+    border: 1px solid var(--bg-line);
+    border-left: 4px solid var(--accent);
+    padding: 22px 26px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.banner-label {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.banner-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border: 1px solid var(--bg-line);
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 20px;
+}
+
+/* ---------- Contact page ---------- */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 8px;
+    max-width: 460px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: var(--bg-raised);
+    border: 1px solid var(--bg-line);
+    padding: 18px 22px;
+    flex-wrap: wrap;
+}
+
+.contact-row .label {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-row .value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contact-row a.value {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-row a.value:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    border-top: 1px solid var(--bg-line);
+    padding: 24px 28px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+footer b {
+    color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+    .topbar {
+        padding: 0 16px;
+        height: 58px;
+    }
+
+    .nav {
+        gap: 18px;
+    }
+
+    .nav a {
+        font-size: 0.88rem;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    main {
+        padding: 36px 18px 56px;
+    }
+
+    h1.title {
+        font-size: 2.1rem;
+    }
+}
