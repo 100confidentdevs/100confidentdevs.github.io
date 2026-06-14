@@ -28,7 +28,7 @@ html {
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
