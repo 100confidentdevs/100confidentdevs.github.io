@@ -129,6 +129,30 @@ main {
     max-width: 60vw;
     display: block;
     margin-bottom: 28px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.12s ease;
+    will-change: transform;
+}
+
+.hero-logo:hover {
+    transform: scale(1.04);
+}
+
+.hero-logo:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+}
+
+.hero-logo.pop {
+    animation: logo-pop 0.32s ease;
+}
+
+@keyframes logo-pop {
+    0% { transform: scale(1); }
+    45% { transform: scale(1.18); }
+    100% { transform: scale(1); }
 }
 
 h1.title {
