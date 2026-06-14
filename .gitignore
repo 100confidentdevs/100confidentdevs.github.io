@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 .vscode/
+
+# Design source files — keep local, don't publish
+*.psd
