@@ -20,19 +20,9 @@ const DISCORD_MEMBER_COUNT = null; // e.g. 100 — total members (API can't auto
 (function () {
     const joinBtn = document.getElementById("join-btn");
     const elOnline = document.getElementById("dw-online");
-    const elMembers = document.getElementById("dw-members");
-    const elName = document.getElementById("dw-name");
 
     // Always have a working join link from the fallback.
     if (joinBtn) joinBtn.href = DISCORD_INVITE;
-
-    // "Members" stat is manual — bind it from the constant if provided.
-    if (elMembers) {
-        elMembers.textContent =
-            typeof DISCORD_MEMBER_COUNT === "number"
-                ? DISCORD_MEMBER_COUNT.toLocaleString()
-                : "—";
-    }
 
     if (!DISCORD_SERVER_ID) {
         // No server configured yet — leave placeholder dashes in the widget.
@@ -45,7 +35,6 @@ const DISCORD_MEMBER_COUNT = null; // e.g. 100 — total members (API can't auto
             return res.json();
         })
         .then((data) => {
-            if (elName && data.name) elName.textContent = data.name;
             // Live: number of members currently online.
             if (elOnline) elOnline.textContent = (data.presence_count ?? 0).toLocaleString();
             if (joinBtn && data.instant_invite) joinBtn.href = data.instant_invite;
